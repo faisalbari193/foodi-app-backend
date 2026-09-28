@@ -7,7 +7,7 @@ const {
 const router = express.Router();
 
 router.post("/popular-category-create", popularCategoryCreateController);
-router.put("/update-popular-category", popularCategoryUpdateController);
+router.put("/update-popular-category/:id", popularCategoryUpdateController);
 router.get("/get-popular-category", getPopularCategoryController);
 
 module.exports = router;

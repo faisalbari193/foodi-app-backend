@@ -7,7 +7,7 @@ const {
 const router = express.Router();
 
 router.post("/create-footer", footerCreateController);
-router.put("/update-footer", footerUpdateController);
+router.put("/update-footer/:id", footerUpdateController);
 router.get("/get-footer", getFooterController);
 
 module.exports = router;
