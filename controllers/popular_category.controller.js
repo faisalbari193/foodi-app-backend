@@ -71,3 +71,32 @@ exports.getPopularCategoryController = async (req, res) => {
     });
   }
 };
+// DELETE
+exports.popularCategoryDeleteController = async (req, res) => {
+  let { id } = req.params;
+
+  try {
+    const deletePopularCategory = await popularCategory.findOneAndDelete({
+      _id: id,
+    });
+
+    if (!deletePopularCategory) {
+      return res.status(404).json({
+        status: false,
+        message: "Our story data not found",
+      });
+    }
+
+    return res.status(200).json({
+      status: true,
+      message: "Our story deleted successfully",
+      data: deletePopularCategory,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      status: false,
+      message: "Error deleting our story",
+      error: error.message,
+    });
+  }
+};

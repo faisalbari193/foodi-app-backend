@@ -69,3 +69,32 @@ exports.getFooterController = async (req, res) => {
     });
   }
 };
+// DELETE
+// exports.footerDeleteController = async (req, res) => {
+//   let { id } = req.params;
+
+//   try {
+//     const deleteFooter = await Footer.findOneAndDelete({
+//       _id: id,
+//     });
+
+//     if (!deleteFooter) {
+//       return res.status(404).json({
+//         status: false,
+//         message: "Footer data not found",
+//       });
+//     }
+
+//     return res.status(200).json({
+//       status: true,
+//       message: "Footer deleted successfully",
+//       data: deleteFooter,
+//     });
+//   } catch (error) {
+//     return res.status(500).json({
+//       status: false,
+//       message: "Error deleting footer",
+//       error: error.message,
+//     });
+//   }
+// };
